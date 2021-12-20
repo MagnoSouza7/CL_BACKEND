@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prs</name>
+    </assembly>
+    <members>
+        <member name="M:Prs.Controllers.AnexoController.GetById(System.Int32)">
+            <summary>
+            Retorna o Anexo especifico pelo Id
+            </summary>
+            <param name="id"></param>
+            <remarks>
+            Retorna uma Anexo apartir do seu identificador.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.AnexoController.ConversorTemp">
+            <summary>
+            Convete todos os Anexo para Base64 
+            </summary>
+            <remarks>
+            Converte todos os Anexos do Banco de Dados para Base64.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.BuController.GetAllBu">
+            <summary>
+            Retorna todos os Bus 
+            </summary>
+            <remarks>
+            Retorna todos os Bus que estão no Banco de Dados.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.BuController.GetById(System.Int32)">
+            <summary>
+            Retorna o Bu especifico pelo Id
+            </summary>
+            <param name="id"></param>
+            <remarks>
+            Retorna um Bu apartir do seu identificador.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.BuController.Create(Prs.Controllers.Request.Bu.BuRequestCreate)">
+            <summary>
+            Cria um novo Bu
+            </summary>
+            <param name="bu"></param>
+            <remarks>
+            Cria um novo Bu apartir dos seus parametros.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.BuController.Update(Prs.Controllers.Request.Bu.BuRequestUpdate)">
+            <summary>
+            Atualiza um Bu especifico apartir do Id
+            </summary>
+            <param name="bu"></param>
+            <remarks>
+            Atualiza um Bu apartir do seu identificador com o seus parametros.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerGerenteContaController.GetWaitingGerente(Prs.Controllers.Request.FiltrosRequest)">
+            <summary>
+            Retorna os Editais que estão aguardando o Parecer do Gerente.
+            </summary>
+            <remarks>
+            Retorna os Edtais que foram cadastrados e estão aguardando o Parecer do Gerente.
+            É retornado apartir de um filtro onde inicialente os parametros são vazios, trazendo assim todos,
+            podendo ainda retornar somente os que contem os parametros do filtro.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="filtro"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerGerenteContaController.GetById(System.Int32)">
+            <summary>
+            Retorna um Edital que já teve o Parecer do Gerente.
+            </summary>
+            <remarks>
+            Retorna um Edital que já teve o Parecer do Gerente apartir do indentificador do Edital.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerGerenteContaController.GetDadosParecerGerente">
+            <summary>
+            Retorna os dados para preencher do formulario.
+            </summary>
+            <remarks>
+            Retorna os dados para preencher o formulario. <br/>
+            -Empresa <br/>
+            -Motivo <br/>
+            -Pré Venda <br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerGerenteContaController.VerifyExists(System.Int32)">
+            <summary>
+            Verifica se existe algum Parecer do Gerente apartir do Id do Edital.
+            </summary>
+            <remarks>
+            Verifica se existe algum Parecer do Gerente apartir do identificador do Edital, retornando assim true ou false. <br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerGerenteContaController.Create(Prs.Controllers.Request.ParecerGerenteRequestCreate)">
+            <summary>
+            Cria um Parecer do Gerente para um determinado Edital.
+            </summary>
+            <remarks>
+            Cria um Parecer do Gerente para um Edital especifico apartir do identificador do Edital e passando os parametros exigidos.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.GetWaitingLicitacao(Prs.Controllers.Request.FiltrosRequest)">
+            <summary>
+            Retorna os Pareceres de Diretor que estão aguardando a Equipe de Licitação dar o resultado.
+            </summary>
+            <remarks>
+            Retorna todos os Pareceres de Diretores que estão aguadando a Equipe de Licitação das o resuldo.
+            É retornado apartir de um filtro onde inicialente os parametros são vazios, trazendo assim todos,
+            podendo ainda retornar somente os que contem os parametros do filtro.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="filtro"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.GetAguardandoFinalizacao(Prs.Controllers.Request.FiltrosRequest)">
+            <summary>
+            Retorna os Pareceres de Diretor que estão aguardando a Equipe de Licitação dar o resultado.
+            </summary>
+            <remarks>
+            Retorna todos os Pareceres de Diretores que estão aguadando a Equipe de Licitação das o resuldo.
+            É retornado apartir de um filtro onde inicialente os parametros são vazios, trazendo assim todos,
+            podendo ainda retornar somente os que contem os parametros do filtro.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="filtro"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.GetSuspenso(Prs.Controllers.Request.FiltrosRequest)">
+            <summary>
+            Retorna os Editais que foram Suspensos pela Equipe de Licitação.
+            </summary>
+            <remarks>
+            Retorna todos os Editais Suspensos pela Equipe de Licitação.
+            É retornado apartir de um filtro onde inicialente os parametros são vazios, trazendo assim todos,
+            podendo ainda retornar somente os que contem os parametros do filtro.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="filtro"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.GetById(System.Int32)">
+            <summary>
+            Retorna um Edital ao qual o Equipe de Licitação já deu o seu resultado apartir do Id do Edital.
+            </summary>
+            <remarks>
+            Retorna um Edital apartir do seu identificador do Edital, ao qual o Equipe de Licitação já deu o seu resultado.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.GetDadosParecerLicitacao">
+            <summary>
+            Retorna os dados para o formulario, para o Equipe de Licitacao dar o resultado.
+            </summary>
+            <remarks>
+            Retorna os dados para o formulario, para o Equipe de Licitacao dar o resultado do Edital.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.VerifyExists(System.Int32)">
+            <summary>
+            Verifica se existe um resultado da Equipe de Licitação apartir do Id do Edital.
+            </summary>
+            <remarks>
+            Verifica se existe um resultado da Equipe de Licitação apartir do identificador do Edital e retorna True ou False.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.Create(Prs.Controllers.Request.ParecerLicitacaoRequestCreate)">
+            <summary>
+            Cria um Resultado de Licitação.
+            </summary>
+            <remarks>
+            Cria um Resultado de Licitação apartir dos parametros exigidos.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="parecerLicitacao"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.ParecerLicitacaoController.Update(Prs.Controllers.Request.ParecerLicitacaoRequestUpdate)">
+            <summary>
+            Altera um Resultado de Licitação apartir do identificador.
+            </summary>
+            <remarks>
+            Altera um Resultado de Licitação apartir dos parametros exigidos e do identificador do parecerLicitação.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="parecerLicitacao"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PortalController.GetAll">
+            <summary>
+            Retorna os Portais cadastrados.
+            </summary>
+            <remarks>
+            Retorna todos os Portais cadastrados.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PortalController.GetById(System.Int32)">
+            <summary>
+            Retorna o Portal apartir do Id.
+            </summary>
+            <remarks>
+            Retorna o Portal apartir do identificador.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PortalController.Create(Prs.Controllers.Request.Portal.PortalRequestCreate)">
+            <summary>
+            Cria um Portal.
+            </summary>
+            <remarks>
+            Cria um Portal apartir dos parametros exigidos.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="portal"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PortalController.Update(Prs.Controllers.Request.Portal.PortalRequestUpdate)">
+            <summary>
+            Altera um Portal.
+            </summary>
+            <remarks>
+            Altera um Portal apartir do seu identificador com os parametros exigidos.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="portal"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PreVendaController.GetAll">
+            <summary>
+            Retorna os Usuários que são Pré-Vendas
+            </summary>
+            <remarks>
+            Retorna todos os Usuarios cadastrados como Pré Venda.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PreVendaController.VerifyPreVenda(System.Int32)">
+            <summary>
+            Verifica se existe um Pré Venda apartir do Id do Usuário.
+            </summary>
+            <remarks>
+            Verifica se um Usuário apartir do identificador existe como Pré Venda.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PreVendaController.GetDadosPreVenda">
+            <summary>
+            Retorna os Usuários que são ativos.
+            </summary>
+            <remarks>
+            Retorna todos os Usuários que são ativos.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PreVendaController.Create(Prs.Controllers.Request.MotivoPerda.PreVendaRequestCreate)">
+            <summary>
+            Cria um Pré Venda.
+            </summary>
+            <remarks>
+            Cria um Pré Venda apartir do identificador de um Usuario.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="preVenda"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.PreVendaController.Update(Prs.Controllers.Request.PreVenda.PreVendaRequestUpdate)">
+            <summary>
+            Altera o ativo de um Pré-Venda.
+            </summary>
+            <remarks>
+            Altera o ativo de um Pré Venda apartir dos seus parametros.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="preVenda"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.RelatorioController.CreateRelatorio(Prs.Controllers.Request.Relatorio.RelatorioRequestCreate)">
+            <summary>
+            Retorna todos os Editais apartir de um filtro.
+            </summary>
+            <remarks>
+            Retorna todos os Editais apartir de um filtro com parametros especificos.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="relatorio"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.RelatorioController.GetFormRelatorio">
+            <summary>
+            Retorna os dados do formulário.
+            </summary>
+            <remarks>
+            Retorna os dados do formulário para ser feito o filtro apartir deles.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.RoleController.GetAllRoles">
+            <summary>
+            Retorna as Roles cadastradas.
+            </summary>
+            <remarks>
+            Retorna todas as Roles cadastradas.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.SolicitacaoCadastroController.CreateSolicitacao(System.String,System.String,System.String)">
+            <summary>
+            Cria uma Solicitação para cadastrar um novo Usuario.
+            </summary>
+            <remarks>
+            Cria uma Solicitação para cadastrar um novo Usuario, o Usuario deve passar os parametros exigidos.
+            </remarks>
+            <param name="nome"></param>
+            <param name="email"></param>
+            <param name="motivo"></param>
+            <response code="400">Bad Request</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.SolicitacaoCadastroController.GetAll">
+            <summary>
+            Retorna as Solicitações criadas.
+            </summary>
+            <remarks>
+            Retorna todas as Solicitaçoes criadas.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.SolicitacaoCadastroController.AutorizarSolicitacao(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            Autoriza a Solicitação especificada apartir do Id
+            </summary>
+            <remarks>
+            Autoriza a Solicitação especifica apartir do identificador, criando assim apartir dos
+            parametros solicitados um novo Usuario no Banco de Dados caso não exista ou caso já exista, 
+            é atualizado o mesmo, deletando a solicitação em seguida.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="id"></param>
+            <param name="login"></param>
+            <param name="senha"></param>
+            <param name="roleId"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.SolicitacaoCadastroController.NaoAutorizarSolicitacao(System.Int32)">
+            <summary>
+            Remove a Solicitação expecificada apartir do Id
+            </summary>
+            <remarks>
+            Remove a Solicitação expecifica apartir do seu identificador.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.UsuarioController.Autenticar(System.String,System.String)">
+            <summary>
+            Autentica o usuario
+            </summary>
+            <param name="login"></param>
+            <param name="senha"></param>
+            <remarks>Autentica o usuario que estiver cadastrado no Banco de Dados, retornando assim um token de autorização.</remarks>
+            <response code="400">Bad Request</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.UsuarioController.GetAll">
+            <summary>
+            Retorna todos os Usuarios
+            </summary>
+            <remarks>
+            Retorna todos os Usuarios que estão no cadastrados, exibindo apenas o id, nome e ativo.
+            Esse controller não necessita de autenticação.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.UsuarioController.Update(Prs.Controllers.Request.UsuarioRequestUpdate)">
+            <summary>
+            Atualiza um Usuario especifico apartir do Id
+            </summary>
+            <remarks>
+            Atualiza um Usuario especifico apartir do seu identificando, atualizando somente a sua função e o seu ativo.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="usuario"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.UsuarioController.Create(System.String,System.String,Prs.Controllers.Request.UsuarioRequestCreate)">
+            <summary>
+            Cria um Usuario 
+            </summary>
+            <remarks>
+            Cria um Usuario no Banco de Dados apartir de um Usuario já cadastrado no LDAP da empresa. 
+            É passado os parametros exigidos e a confirmação de login e senha do usuario que está fazendo o cadastro.<br/>
+            Esse controller para ser usado requer a autenticação de um usuario administrador ou licitação.
+            </remarks>
+            <param name="login"></param>
+            <param name="senha"></param>
+            <param name="usuario"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.UsuarioController.GetNotification(System.Int32)">
+            <summary>
+            Retorna os pareceres de usuarios que estão em aberto
+            </summary>
+            <remarks>
+            Retorna os pareceres de um usuario especifico que estão em aberto apartir do seu identificador.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Prs.Controllers.UsuarioController.AutenticateTokenUser">
+            <summary>
+            Valida o token do Usuario
+            </summary>
+            <remarks>
+            Valida o token do Usuario.<br/>
+            Esse controller para ser usado requer a autenticação.
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+    </members>
+</doc>

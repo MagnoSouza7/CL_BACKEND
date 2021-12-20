@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repository\NovaPasta1\**" />
+    <Compile Remove="Repository\NovaPasta2\**" />
+    <EmbeddedResource Remove="Repository\NovaPasta1\**" />
+    <EmbeddedResource Remove="Repository\NovaPasta2\**" />
+    <None Remove="Repository\NovaPasta1\**" />
+    <None Remove="Repository\NovaPasta2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201021000224_consultaPublica.cs" />
+    <Compile Remove="Migrations\20201021000224_consultaPublica.Designer.cs" />
+    <Compile Remove="Migrations\20201021000607_consultaPublica.cs" />
+    <Compile Remove="Migrations\20201021000607_consultaPublica.Designer.cs" />
+    <Compile Remove="Migrations\20201021001240_consultaPublica.cs" />
+    <Compile Remove="Migrations\20201021001240_consultaPublica.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Repository\ConsultaPublica\Create\CreateConsultaPublica.cs~RF1aba1f30.TMP" />
+    <None Remove="Repository\DocumentosCl\Create\CreateDocumentoCl.cs~RF3d962ea3.TMP" />
+    <None Remove="Repository\ParecerDiretor\GetWaitingDiretor\GetWaitingParecerDiretor.cs~RF5bb8ccf.TMP" />
+    <None Remove="Repository\Portal\GetById\IGetAllByIdPortal.cs~RF1eff4bab.TMP" />
+    <None Remove="Repository\PreVenda\GetDadosPreVenda\GetDadosPreVenda.cs~RF1a4c5b85.TMP" />
+    <None Remove="Repository\PreVenda\VerifyPreVenda\VerifyPreVenda.cs~RF1a56d1be.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Novell.Directory.Ldap.NETStandard" Version="3.2.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Email\Email.csproj" />
+  </ItemGroup>
+
+</Project>
